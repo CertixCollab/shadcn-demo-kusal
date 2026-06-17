@@ -3,6 +3,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 const cards = [
   { 
@@ -151,6 +161,30 @@ export default function Home() {
                 ))}
               </TableBody>
             </Table>
+          </div>
+        </div>
+        <div className="border-b border-gray-300 w-full max-w-4xl mb-8">
+          <div className="text-4xl font-bold mb-8">Dialogs and User Interaction</div>
+          <div className="dialog-interaction mt-10 mb-8">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="default">Delete a Student</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Delete Confirmation</DialogTitle>
+                  <DialogDescription>
+                    Are you sure you want to delete this student?
+                  </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                  <DialogClose asChild>
+                    <Button variant="outline">Cancel</Button>
+                  </DialogClose>
+                  <Button variant="destructive">Delete</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
