@@ -1,36 +1,308 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shadcn UI with Next.js – Beginner Learning Project
 
-## Getting Started
+A beginner-friendly project for learning how to build modern user interfaces using **Shadcn UI**, **Next.js**, and **Tailwind CSS**.
 
-First, run the development server:
+This project demonstrates how to install and use common Shadcn UI components, including buttons, cards, forms, tables, dialogs, and dashboard layouts.
+
+---
+
+## 📚 Learning Objectives
+
+By completing this project, you will learn how to:
+
+* Set up a Next.js application
+* Install and configure Shadcn UI
+* Add and customize Shadcn components
+* Build reusable UI elements
+* Create forms and input fields
+* Display data using tables
+* Implement dialog interactions
+* Combine multiple components into a dashboard
+
+---
+
+## 🛠 Prerequisites
+
+Before starting, you should be familiar with:
+
+* Basic HTML
+* Basic React
+* Next.js fundamentals
+* Components and Props
+
+---
+
+## 🚀 Project Setup
+
+### 1. Create a Next.js Project
+
+```bash
+npx create-next-app@latest shadcn-demo
+```
+
+Navigate into the project:
+
+```bash
+cd shadcn-demo
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Initialize Shadcn UI
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx shadcn@latest init
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Follow the recommended configuration options.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After initialization, your project will contain folders similar to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+components/
+lib/
+```
 
-## Deploy on Vercel
+When components are added, they are copied directly into your project:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+components/
+└── ui/
+    └── button.tsx
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This allows complete customization of component source code.
+
+---
+
+## 🎯 Module 1: Buttons
+
+Install the Button component:
+
+```bash
+npx shadcn@latest add button
+```
+
+Import:
+
+```tsx
+import { Button } from "@/components/ui/button";
+```
+
+Usage:
+
+```tsx
+<Button>Click Me</Button>
+```
+
+### Practice
+
+Create buttons for:
+
+* Login
+* Register
+* Contact
+
+### Challenge
+
+Build a page containing multiple action buttons.
+
+---
+
+## 🎯 Module 2: Cards
+
+Install the Card component:
+
+```bash
+npx shadcn@latest add card
+```
+
+Example:
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>React Course</CardTitle>
+  </CardHeader>
+
+  <CardContent>
+    Learn React from scratch.
+  </CardContent>
+</Card>
+```
+
+### Real-World Applications
+
+* Product Cards
+* Course Cards
+* Team Profiles
+* Blog Summaries
+
+### Practice
+
+Create three course cards.
+
+---
+
+## 🎯 Module 3: Forms and Inputs
+
+Install components:
+
+```bash
+npx shadcn@latest add input
+npx shadcn@latest add label
+```
+
+Example:
+
+```tsx
+<Label>Email</Label>
+<Input placeholder="Enter your email" />
+```
+
+### Registration Form
+
+Include the following fields:
+
+* Name
+* Email
+* Password
+
+Add a submit button.
+
+### Practice
+
+Create a student registration form.
+
+---
+
+## 🎯 Module 4: Tables
+
+Install:
+
+```bash
+npx shadcn@latest add table
+```
+
+Example Data:
+
+| ID | Name  | Course  |
+| -- | ----- | ------- |
+| 1  | Kasun | React   |
+| 2  | Nimal | Next.js |
+| 3  | Amal  | Node.js |
+
+### Real-World Applications
+
+* Student Lists
+* Orders
+* Employees
+* Products
+
+### Practice
+
+Build a student management table.
+
+---
+
+## 🎯 Module 5: Dialogs
+
+Install:
+
+```bash
+npx shadcn@latest add dialog
+```
+
+### Common Use Cases
+
+* Delete Confirmation
+* Profile Information
+* Terms & Conditions
+
+### Example Flow
+
+```text
+User Clicks Delete
+        ↓
+Dialog Opens
+        ↓
+User Confirms
+```
+
+### Practice
+
+Create a delete confirmation popup.
+
+---
+
+## 🎯 Module 6: Dashboard
+
+Combine multiple components:
+
+* Card
+* Button
+* Table
+
+### Dashboard Example
+
+```text
+Total Students: 150
+Total Courses: 12
+Total Instructors: 8
+```
+
+### Features
+
+* Statistics cards
+* Student table
+* Action buttons
+
+### Practice
+
+Build a simple admin dashboard.
+
+---
+
+## ✅ Self-Evaluation Checklist
+
+After completing the exercises, verify that you can:
+
+* [ ] Install Shadcn UI
+* [ ] Add new components
+* [ ] Import components correctly
+* [ ] Create forms
+* [ ] Create tables
+* [ ] Create dialogs
+* [ ] Build reusable UI components
+* [ ] Build a complete page using multiple components
+
+---
+
+## 📖 Next Steps
+
+Explore additional Shadcn UI components:
+
+* Select
+* Dropdown Menu
+* Command Palette
+* Calendar
+* Charts
+* Accordion
+* Tabs
+* Navigation Menu
+
+These components are widely used in modern production applications.
+
+---
+
+## 🎉 Conclusion
+
+This project provides a practical introduction to Shadcn UI and Next.js. By completing each module and exercise, you will gain hands-on experience building reusable, customizable, and modern user interfaces.
