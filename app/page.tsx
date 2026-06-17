@@ -64,9 +64,17 @@ const students = [
   }
 ];
 
+const statistics = [
+  { id: "1", title: "Total Students", value: "150" },
+  { id: "2", title: "Active Courses", value: "5" },
+  { id: "3", title: "Completed Courses", value: "120" },
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
+
+      {/* Buttons Section */}
       <div className="border-b border-gray-300 w-full max-w-4xl mb-8">
         <div className="text-4xl font-bold mb-8">Buttons</div>
         <div className="button-group mt-10 mb-8">
@@ -81,6 +89,8 @@ export default function Home() {
           </Button>
         </div>
       </div>
+
+      {/* Cards Section */}
       <div className="border-b border-gray-300 w-full max-w-4xl mb-8">
         <div className="text-4xl font-bold mb-8">Cards</div>
         <div className="card-group mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-8">
@@ -94,6 +104,8 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* Registration Form Section */}
       <div className="border-b border-gray-300 w-full max-w-4xl mb-8">
         <div className="text-4xl font-bold mb-8">Registration Form</div>
         <div className="registration-form mt-10 mb-8">
@@ -138,6 +150,8 @@ export default function Home() {
               </div>
           </div>
         </div>
+
+        {/* Student Management Table */}
         <div className="border-b border-gray-300 w-full max-w-4xl mb-8">
           <div className="text-4xl font-bold mb-8">Student Management Table</div>
           <div className="student-table mt-10 mb-8">
@@ -163,6 +177,8 @@ export default function Home() {
             </Table>
           </div>
         </div>
+
+        {/* Dialogs and User Interaction */}
         <div className="border-b border-gray-300 w-full max-w-4xl mb-8">
           <div className="text-4xl font-bold mb-8">Dialogs and User Interaction</div>
           <div className="dialog-interaction mt-10 mb-8">
@@ -185,6 +201,47 @@ export default function Home() {
                 </DialogFooter>
               </DialogContent>
             </Dialog>
+          </div>
+        </div>
+
+        {/* Additional UI Components for Dashboard */}
+        <div className="border-b border-gray-300 w-full max-w-4xl mb-8">
+          <div className="text-4xl font-bold mb-8">Building a Dashboard</div>
+          <div className="additional-ui mt-10 mb-8">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-8">
+              {statistics.map((card) => (
+                <Card key={card.id} className="border border-gray-300 shadow-sm">
+                  <CardHeader>
+                    <CardTitle>{card.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>{card.value}</CardContent>
+                </Card>
+              ))}
+            </div>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="text-left">Student ID</TableHead>
+                  <TableHead className="text-left">Name</TableHead>
+                  <TableHead className="text-left">Email</TableHead>
+                  <TableHead className="text-left">Course</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {students.map((student) => (
+                  <TableRow key={student.id}>
+                    <TableCell>{student.id}</TableCell>
+                    <TableCell>{student.name}</TableCell>
+                    <TableCell>{student.email}</TableCell>
+                    <TableCell>{student.course}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+            <div className="mt-8 flex justify-center space-x-4">
+              <Button variant="outline">Previous</Button>
+              <Button variant="default">Next</Button>
+            </div>
           </div>
         </div>
       </div>
